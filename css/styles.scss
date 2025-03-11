@@ -1,0 +1,200 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+$body-color: #5a1515;
+$body-bg: #ffffff;
+$link-color: #bd0b0b;
+$link-hover-color: #6512d8;
+$border-radius: 20px;
+
+$primary: deeppink;
+$secondary: rgba(128, 202, 255, 0.85);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+				"farve": $cyan-400,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+
+.bgbillede {
+	background: url('../img/chris-knight--ucnC7PMDqE-unsplash.jpg') no-repeat center center fixed;
+	background-size: cover; /* Sørger for at billedet dækker hele baggrunden */
+	min-height: 100vh;
+}
+
+/* Styling til navbar */
+.rounded-navbar {
+	background: #4B4B4B; /* Ændret til #4B4B4B i stedet for gennemsigtig sort */
+	border-radius: 20px; /* Runde hjørner */
+	overflow: hidden;
+	padding: 5px 15px; /* Reduceret padding for at gøre navbaren kortere */
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000; /* Sørger for at navbaren ligger over baggrundsbilledet */
+}
+
+/* Styling for navbar links og brand */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-brand {
+	color: white !important; /* Hvid tekst */
+}
+
+/* Styling for resten af indholdet */
+
+
+/* Responsivitet for mindre skærme */
+@media (max-width: 768px) {
+	.navbar-nav {
+		text-align: center; /* Centrer navbar links på små skærme */
+	}
+	.rounded-navbar {
+		border-radius: 10px; /* Mindre runde hjørner på små skærme */
+		padding: 5px 10px; /* Mindre padding for at gøre navbaren kortere */
+		background-color: #4B4B4B !important; /* Sørger for at baggrundsfarven er #4B4B4B på små skærme */
+	}
+}
+
+/* Styling for the circular icon */
+.navbar-brand i {
+	background-color: #d9d9d9; /* Grå baggrund for cirklen */
+	color: black; /* Hvidt ikon */
+	border-radius: 50%; /* Cirkelform */
+	padding: 15px; /* Lidt luft omkring ikonet */
+	font-size: 24px; /* Størrelsen på ikonet */
+}
+
+footer {
+	background-color: #8BF39E; /* Mørk baggrundsfarve */
+	margin-top: 50px; /* Luft over footeren */
+}
+
+footer .container {
+	padding: 20px 0; /* Padding til indholdet */
+}
+
+footer a {
+	color: #8BF39E; /* Grøn farve til links */
+}
+
+footer a:hover {
+	color: #000000; /* Hvid farve ved hover */
+}
+
+footer {
+	background-color: #333; /* Mørk baggrundsfarve */
+	color: #8BF39E; /* Din ønskede grøn farve til teksten */
+	margin-top: 50px; /* Luft over footeren */
+	display: flex; /* Brug flexbox */
+	justify-content: space-between; /* For at placere indhold på hver side */
+	align-items: center; /* Juster elementerne vertikalt */
+	padding: 20px 30px; /* Plads omkring indholdet */
+}
+
+
+
+footer {
+	background-color: #8BF39E; /* Mørk baggrundsfarve */
+	padding: 20px 0;
+}
+
+footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer .social-icons a {
+	font-size: 24px;
+	margin-left: 10px; /* Afstand mellem ikoner */
+	color: #8BF39E; /* Grøn farve til ikoner */
+}
+
+footer .text-center {
+	text-align: left; /* Teksten vil blive justeret til venstre */
+	flex: 1;
+}
+
+footer .social-icons {
+	display: flex;
+	justify-content: flex-end; /* Placerer ikonerne til højre */
+}
+
+/* Styling for the circular icon */
+.navbar-brand i {
+	background-color: #d9d9d9; /* Grå baggrund for cirklen */
+	color: black; /* Hvidt ikon */
+	border-radius: 50%; /* Cirkelform */
+	padding: 15px; /* Lidt luft omkring ikonet */
+	font-size: 24px; /* Størrelsen på ikonet */
+}
+
+.contact-icon {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(76, 175, 80, 0.1); /* Primær farve baggrund */
+	border-radius: 50%;
+	font-size: 1.5rem;
+	color: #4CAF50;
+}
+
+.contact-card {
+	transition: 0.3s;
+}
+
+.contact-card:hover {
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text p {
+	max-width: 800px; /* Begrænser bredden, så teksten brydes på passende steder */
+	white-space: normal; /* Tillader tekst at brydes på flere linjer */
+	word-wrap: break-word; /* Sørger for, at lange ord brydes korrekt */
+	line-height: 1.6; /* Justerer linjeafstand for bedre læsbarhed */
+}
+
+/* Justering af navbaren */
+.navbar {
+	padding-left: 10px;  /* Reducer padding venstre */
+	padding-right: 10px;  /* Reducer padding højre */
+}
+
+/* Justering af navbar-link */
+.navbar-nav .nav-link {
+	margin-right: 10px;  /* Skab lidt luft mellem linkene */
+	font-size: 1.1rem;  /* Gør skrifttypen lidt mindre */
+}
+
+/* Ændre knap størrelse og padding */
+.navbar .btn {
+	padding: 8px 15px;  /* Reducer padding for knappen */
+}
+
+/* CSS for at sikre, at kortene er lige store */
+.contact-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Placerer indholdet ensartet i kortet */
+	min-height: 250px; /* Minimum højde for kortene */
+}
+/* Sikre at alle kort er ens i højden */
+.row .col-md-6 {
+	display: flex;
+}
+.row .col-md-6 .contact-card {
+	flex-grow: 1;
+}
