@@ -252,6 +252,33 @@ footer .social-icons {
 .row .col-md-6 .contact-card {
     flex-grow: 1;
 }
+  /* Rund hjørner på billeder i carousel */
+ .rounded-image {
+     border-radius: 15px; /* Juster radius efter behov */
+     height: 100%;
+     padding: 10px;
+ }
+ 
+ /* Styling til carousel captions */
+ .carousel-caption {
+     background: rgba(0, 0, 0, 0.5); /* Mørk gennemsigtig baggrund */
+     color: white;
+     padding: 15px;
+     border-radius: 10px;
+ }
+ 
+ /* Tilføj lidt afstand mellem indikationsknapperne */
+ .carousel-indicators button {
+     background-color: #4CAF50; /* Grøn farve til prikkerne */
+     border-radius: 50%;
+     width: 10px;
+     height: 10px;
+ }
+
+
+
+
+
 	</style>
 </head>
 <body>
@@ -374,9 +401,10 @@ footer .social-icons {
 						<i class="fa-regular fa-clock" style="color: #4CAF50;"></i> <!-- Farve ændret til grøn -->
 					</div>
 					<div>
-						<h5 class="fw-semibold">Åbningstider</h5>
-						<p class="text-muted mb-2">Mandag-fredag, 8:00 til 17:00</p>
-						<a href="#" class="text-success text-decoration-none">Se mere her! →</a>
+						<h3 class="fw-semibold">Åbningstider</h3>
+						<h4 class="text-muted mb-2">Mandag-fredag, 8:00 til 17:00</h4>
+                        <br>
+						<a href="#" class="text-success text-decoration-none h4">Se mere her! →</a>
 					</div>
 				</div>
 			</div>
@@ -389,9 +417,10 @@ footer .social-icons {
 						<i class="fa-solid fa-location-dot" style="color: #4CAF50;"></i> <!-- Farve ændret til grøn -->
 					</div>
 					<div>
-						<h5 class="fw-semibold">Vores adresse</h5>
-						<p class="text-muted mb-2">FlexCut A/S, 1234 København</p>
-						<a href="#" class="text-success text-decoration-none">Find os her →</a>
+						<h3 class="fw-semibold">Vores adresse</h3>
+						<h4 class="text-muted mb-2">FlexCut A/S, 1234 København</h4>
+                        <br>
+						<a href="#" class="text-success text-decoration-none h4">Find os her →</a>
 					</div>
 				</div>
 			</div>
@@ -404,16 +433,63 @@ footer .social-icons {
 						<i class="fa-solid fa-phone" style="color: #4CAF50;"></i> <!-- Farve ændret til grøn -->
 					</div>
 					<div>
-						<h5 class="fw-semibold">Kontakt os</h5>
-						<p class="text-muted mb-2">+45 12 34 56 78 eller info@flexcut.dk</p>
-
-						<a href="#" class="text-success text-decoration-none">Kontakt os nu →</a>
+						<h3 class="fw-semibold">Kontakt os</h3>
+						<h4 class="text-muted mb-2">+45 12 34 56 78 eller info@flexcut.dk</h4>
+                          <br>
+						<a href="#" class="text-success text-decoration-none h4">Kontakt os nu →</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<!-- Carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/master-cuts-hair-and-beard-in-the-barber-shop-2025-01-10-20-37-28-utc.jpg" class="d-block w-100 rounded-image" alt="Frisørklipning">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Professionel Klipning</h5>
+                <p>Få en stilfuld og moderne klipning, der passer til din personlighed.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/hairdresser-in-barbershop-giving-customer-wet-shav-2024-06-25-16-14-54-utc.jpg" class="d-block w-100 rounded-image" alt="Barbering">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Skægtrimning</h5>
+                <p>Få din skægtrimning gjort med præcision og omsorg.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/stylish-man-sitting-in-a-barbershop-2024-12-07-01-39-35-utc.jpg" class="d-block w-100 rounded-image" alt="Hår Styling">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Professionel Hårstyling</h5>
+                <p>Vælg den bedste styling for at få dit hår til at skinne.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Indikatorer (de små prikker) under carousel -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <footer class="text-black text-center py-4 mt-5">
 	<div class="container d-flex justify-content-between align-items-center">
@@ -444,7 +520,7 @@ footer .social-icons {
         var barberId = document.getElementById('BarberId').value;
         var bookingTimeStart = document.getElementById('BookingTimeStart').value;
         var bookingTimeEnd = document.getElementById('BookingTimeEnd').value;
-    
+
         if (!customerName || !bookingDate || !barberId || !bookingTimeStart || !bookingTimeEnd) {
             alert("Alle felter skal udfyldes korrekt.");
             return false; // Prevent form submission
